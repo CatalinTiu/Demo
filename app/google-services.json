@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "469534393552",
+    "firebase_url": "https://carparking-879df.firebaseio.com",
+    "project_id": "carparking-879df",
+    "storage_bucket": "carparking-879df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469534393552:android:c5b5daef5f5b6f43e84ad5",
+        "android_client_info": {
+          "package_name": "com.example.parkingdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469534393552-gak1spc068pal1rch0ip6p5e5r2bjtb7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdUX1-xwsK17XcXBt96yIbDCwlup7L49s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469534393552-gak1spc068pal1rch0ip6p5e5r2bjtb7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
