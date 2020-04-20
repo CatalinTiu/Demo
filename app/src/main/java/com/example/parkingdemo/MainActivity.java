@@ -33,14 +33,17 @@ import java.util.Map;
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
-    public final static String EXTRA_MESSAGE = "someString";
-    private static final String TAG = "Nr. copii";
-    public int ok = 5;
-    public String[] arr_oc = new String[9];
+    public final static String EXTRA_MESSAGE = "someString";  // nu afecteaza deloc codul, dar trebuie scrise niste valori aleatoare pentru a putea trimite spre pagina urmatoare
+    public int ok = 5; // ia valoarea nr. de locuri parcate ocupate
+    public String[] arr_oc = new String[9]; // ia valoarea listei cu totate numele locurilor de parcare
 
 
 
-
+    /* Functia onCreate se apeleaza prima, atunci cand se incarca pagina.
+    Transmitem valoarea nr.locurilor de parcare ocupate si lista cu numele tuturor locurilor de parcare in variabilele ok si arr_oc.
+    Dupa aceea, transformam lista cu numele locurilor de parcare intr-o lista doar cu locurile de parcare ocupate
+    Dupa afisam utilizatorului toate locurile de parcare ocupate
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
@@ -61,17 +64,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // 1. Instantiate an <code><a href="/reference/android/app/AlertDialog.Builder.html">AlertDialog.Builder</a></code> with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                // User clicked OK button
                 dialog.dismiss();
             }
         });
 
-// 2. Chain together various setter methods to set the dialog characteristics
 
         builder.setItems(arr_oc, new DialogInterface.OnClickListener() {
             @Override
@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
         });
            builder.setTitle("Urmatoarele locuri de parcare sunt ocupate:");
 
-// 3. Get the <code><a href="/reference/android/app/AlertDialog.html">AlertDialog</a></code> from <code><a href="/reference/android/app/AlertDialog.Builder.html#create()">create()</a></code>
         AlertDialog dialog = builder.create();
         dialog.show();
 
@@ -95,13 +94,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+/*Aceasta functie se apeleaza cand apasam oricare dintre butoane,
+ si redirectioneaza catre pagina de platit cu cardul asociata locului de parcare respectiv
+ */
     public void sendMessage(View view) {
-        // Do something in response to button
         Intent intent = new Intent(this, DetaliiLoc.class);
 
         String button=((Button) view).getText().toString();
-
 
         intent.putExtra(EXTRA_MESSAGE, button);
         startActivity(intent);

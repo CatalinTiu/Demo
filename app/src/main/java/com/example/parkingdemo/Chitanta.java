@@ -8,23 +8,21 @@ import android.webkit.WebView;
 
 public class Chitanta extends AppCompatActivity {
 
-    WebView webView;
+    WebView webView;//Este necesar pentru a afisa pagini html, iar chitanta este scrisa in html
 
-    public String fileName = "invoice.html";
+    public String fileName = "invoice.html";// numele paginii html
 
+    // Functia onCreate se apeleaza prima, atunci cand se incarca pagina.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chitanta);
 
-        Intent intent = getIntent();
-        final String nume = intent.getStringExtra(DetaliiLoc.EXTRA_MESSAGE1);
-        final String loc_parcare = intent.getStringExtra(DetaliiLoc.EXTRA_MESSAGE2);
-        final String nr_ore = intent.getStringExtra(DetaliiLoc.EXTRA_MESSAGE3);
 
-        // init webView
+
+        // initiam webView, care incarca pagina html cu chitanta
         webView = (WebView) findViewById(R.id.simpleWebView);
-        // displaying content in WebView from html file that stored in assets folder
+        // apelam deschiderea fisierului html din folderul assets
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("file:///android_asset/" + fileName);
 
