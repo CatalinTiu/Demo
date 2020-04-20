@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent intent = getIntent();
-        ok = intent.getIntExtra(Splash.EXTRA_MESSAGE1, 0);
-        arr_oc = intent.getStringArrayExtra(Splash.EXTRA_MESSAGE2);
+        ok = intent.getIntExtra(Logare.EXTRA_MESSAGE1, 0);
+        arr_oc = intent.getStringArrayExtra(Logare.EXTRA_MESSAGE2);
 
         List<String> list_without_null = new ArrayList<String>();
         for(String new_string : arr_oc ) {
@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Log.i("Array-ul este ", Arrays.toString(arr_oc));
 
         // 1. Instantiate an <code><a href="/reference/android/app/AlertDialog.Builder.html">AlertDialog.Builder</a></code> with its constructor
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -102,8 +101,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DetaliiLoc.class);
 
         String button=((Button) view).getText().toString();
-
-
 
 
         intent.putExtra(EXTRA_MESSAGE, button);
